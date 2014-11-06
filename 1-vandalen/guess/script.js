@@ -12,22 +12,21 @@ window.onload = function(){
 		console.log("Du gissade: " + number); // Detta nummer är det som användaren gissade på.
 		
 		
-		if (number < 1 || number > 100){
+		if (number >= 1 && number <= 100){
+			
+			count++;
+
+			if (number == secret){
+				return [true, "Grattis du vann! Det hemliga talet var "+ secret +" och du behövde "+ count + " gissningar för att hitta det."];
+			} else if (number > secret){
+				return [false, "Det hemliga talet är lägre!"];
+			} else {
+				return [false, "Det hemliga talet är högre!"];
+			};
+		} else {
 			return [false, "Talet är utanför intervallet 0 - 100"];
 		};
-		count++;
-
-		if (number == secret){
-			return [true, "Grattis du vann! Det hemliga talet var "+ secret +" och du behövde "+ count + " gissningar för att hitta det."];
-		};
-
-		if (number > secret){
-			return [false, "Det hemliga talet är lägre!"];
-		};
-
-		if (number < secret){
-			return [false, "Det hemliga talet är högre!"];
-		};
+		
 		
 		
 		// Plats för förändring.
