@@ -8,17 +8,24 @@ window.onload = function(){
 		// Returnera den konverterade strängen.
 		// Vid fel, kasta ett undantag med ett meddelande till användaren. 
 		 //return (str.toLowerCase());
-		 var a = str;
-		 var b = '';
-
-		 for (var i = 0; i < a.length; i++){
-		 	if (a.charCodeAt(i) >= 65 && a.charCodeAt(i) <= 90){
-		 		b = b + a.charAt(i).toLowerCase();
-		 	}
-		 	else
-		 		b = b + a.charAt(i).toUpperCase();
-		 }
+		var a = str;
+		var b = '';
+		if (str.length > 0){
+	 		for (var i = 0; i < a.length; i++){
+		 	
+			 	if (a.charCodeAt(i) >= 65 && a.charCodeAt(i) <= 90 || a.charCodeAt(i) >= 196 && a.charCodeAt(i) <= 214){
+			 		b = b + a.charAt(i).toLowerCase().replace(/a/g, "#");
+			 	} else {
+			 		b = b + a.charAt(i).toUpperCase().replace(/A/g, "#");
+			 	};
+		 	};
 		 	return(b);
+	 	} else {
+		 	return "MEN FÖR FAN!";
+	 	};
+
+
+		
 
 
 
