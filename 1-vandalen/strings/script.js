@@ -21,7 +21,7 @@ window.onload = function(){
 		 	};
 		 	return(b);
 	 	} else {
-		 	return "MEN FÖR FAN!";
+		 	return "Vänligen skriv något!";
 	 	};
 
 
