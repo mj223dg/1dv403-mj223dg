@@ -4,7 +4,18 @@ window.onload = function(){
 
 	
 	var birthday = function(date){
-	var currentdate = new date();
+	var currentdate = new Date();
+	var myBirthday = new Date(date);
+
+	if (currentdate.getTime() > myBirthday.getTime()) {
+		myBirthday.setFullYear(myBirthday.getFullYear()+1);
+	}
+	var diff = myBirthday.getTime()-currentdate.getTime();
+	var days = Math.floor(diff/(1000*60*60*24));
+
+	return days; 
+
+
 
 
 			// Din kod här.
