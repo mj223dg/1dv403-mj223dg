@@ -7,8 +7,18 @@ window.onload = function(){
 		// Plats för förändring.		
 		// Returnera den konverterade strängen.
 		// Vid fel, kasta ett undantag med ett meddelande till användaren. 
-	
+		 //return (str.toLowerCase());
+		 var a = str;
+		 var b = '';
 
+		 for (var i = 0; i < a.length; i++){
+		 	if (a.charCodeAt(i) >= 65 && a.charCodeAt(i) <= 90){
+		 		b = b + a.charAt(i).toLowerCase();
+		 	}
+		 	else
+		 		b = b + a.charAt(i).toUpperCase();
+		 }
+		 	return(b);
 
 
 
