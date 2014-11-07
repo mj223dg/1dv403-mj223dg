@@ -15,7 +15,6 @@ window.onload = function(){
 		if (myBirthday > currentdate){
 		return (alert("Du är ej född."))
 	}
-	
 	myBirthday.setFullYear(currentdate.getFullYear());
 	if (currentdate.getTime() > myBirthday.getTime()) {
 		myBirthday.setFullYear(myBirthday.getFullYear()+1);
