@@ -8,12 +8,14 @@ window.onload = function(){
 		// Returnera den konverterade strängen.
 		// Vid fel, kasta ett undantag med ett meddelande till användaren. 
 		 //return (str.toLowerCase());
+		
 		var a = str;
-		var b = '';
+		var b = "";
 		if (str.length > 0){
 	 		for (var i = 0; i < a.length; i++){
-		 	
+		 		//Alla unicodevärden mellan 65 och 90 blir gemener, även mellan 196 och 214.
 			 	if (a.charCodeAt(i) >= 65 && a.charCodeAt(i) <= 90 || a.charCodeAt(i) >= 196 && a.charCodeAt(i) <= 214){
+			 		//Ändrar alla stora bokstäver till små och tvärtom. Gör även alla A, a till #. 
 			 		b = b + a.charAt(i).toLowerCase().replace(/a/g, "#");
 			 	} else {
 			 		b = b + a.charAt(i).toUpperCase().replace(/A/g, "#");

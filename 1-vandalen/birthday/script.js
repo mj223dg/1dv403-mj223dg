@@ -11,32 +11,37 @@ window.onload = function(){
 		//Användaren väljer sitt datum.
 	var myBirthday = new Date(date);
 
-			//Ful lösning på felmeddelande. Får vara där tills jag hittar annan lösning.
-		if (myBirthday > currentdate){
-		return (alert("Du är ej född."))
+
+
+
+	if(isNaN(myBirthday)){
+		//console.log('ej giltigt datum.');
+		//throw new Error('ej giltigt datum.');
+		throw {'message' : "ej giltigt datum."}
 	}
+
+		//Ful lösning på felmeddelande. Får vara där tills jag hittar annan lösning.
+	if (myBirthday > currentdate){
+		//return (alert("Du är ej född."))
+		throw {'message' : "Du är ej född."}
+	}
+		//aktuellt år.
 	myBirthday.setFullYear(currentdate.getFullYear());
-	if (currentdate.getTime() > myBirthday.getTime()) {
+
+		// Om tiden som är nu har passerat min födelsedag. 
+	if (currentdate > myBirthday) {
 		myBirthday.setFullYear(myBirthday.getFullYear()+1);
 	}
 	var diff = myBirthday.getTime() - currentdate.getTime();
 	var days = Math.ceil(diff/(1000*60*60*24));
 
-		//Om dagarna är lika med 365 returnera case 1.
+		//Om dagarna är lika med 365 returnera case 0.
 	if (days === 365) {
 	
 		return 0;
 	};
 	
 	return days; 
-
-
-
-
-			// Din kod här.
-
-
-
 
 	};
 	// ------------------------------------------------------------------------------
