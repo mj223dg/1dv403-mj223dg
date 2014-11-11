@@ -11,8 +11,9 @@ var names = persArr.map(function (names){return names.name;}).sort(function(a, b
 var ages = persArr.map(function (ages){ return ages.age;});
 
 	//Lägger ihop åldrarna och tar fram medelåldern.
-var averageAge = ages.reduce(function(a, b){ return a + b;});
-averageAge /= ages.length;
+var totalAge = ages.reduce(function(a, b){ return a + b;});
+totalAge /= ages.length;
+var averageAge = totalAge;
 averageAge = Math.round(averageAge);
 var maxAge = Math.max.apply(Math, ages);
 var minAge = Math.min.apply(Math, ages);
