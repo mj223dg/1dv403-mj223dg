@@ -1,9 +1,15 @@
 "Use strict";
 var MessageBoard = {
-	init:function(Message, date){
-var mess = new Message("test", new date());
-alert()
-	}
+	
+	messages: [],
 
+	init:function(e){
+
+	var mess = new Message("test", new Date());
+
+	MessageBoard.messages.push("Hej, hej, nej, Nej");
+
+	console.log(MessageBoard.messages);
+	}
 };
 window.onload = MessageBoard.init;
