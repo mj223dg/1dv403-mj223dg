@@ -7,19 +7,31 @@ header{
 	margin: 0;
 	padding: 0;
 	width: auto;
-	height: auto;
-	background-color: 3333;
-
+	height: 150px;
+	background-color: #4D423B;
 }
 
 #container{
-
+	margin: 0 auto;
+	width: auto;
+	height: 960px;
+	background-color: #3B2C21;
+}
+#button{
 }
 
 #messagecontainer{
+	margin: 0 auto;
+	width: 750px;
+	height: auto;
+	background-color: #3B2C21;
 
 }
 
-#textbox{
-
+textarea{
+	margin: 0 auto;
+	width: 750px;
+	height: 600px;
+	background-color: #847368;
+	font-size: 25px;
 }
