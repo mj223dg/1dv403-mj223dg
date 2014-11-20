@@ -2,23 +2,28 @@
 <html>
 	<head>
 		<title> </title>
-
+		<meta charset="UTF-8" />
 		<script src="Message.js"></script>
 		<script src="MessageBoard.js"></script>
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
 		<header>
-		
+			<img id="logo" src="labbyMessage.gif" alt="logo, Labby Message"/>
 		</header>
+		<div id="chatLog">
+		</div>
 
 		<div id="container">
-			<button id="button" type="button" onclick="alert('Why did you click!')">Click Me!</button>
 			<div id="messagecontainer">
-				<textarea>
+			<h5> Antal meddelande: 0 </h5>
+				<textarea id="textArea" type"text" placeholder="Skriv ditt meddelande här..."></textarea>
+				<button id="button" type="button">Send mezzage!</button>
 
-				</textarea>
 			</messagecontainer>
+			<TextBoxContainer>
+				
+			</TextBoxContainer>
 
 
 		</container>

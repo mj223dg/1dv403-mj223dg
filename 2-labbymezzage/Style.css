@@ -4,34 +4,48 @@ body{
 }
 
 header{
-	margin: 0;
+	margin: 0 auto;
 	padding: 0;
-	width: auto;
-	height: 150px;
-	background-color: #4D423B;
+	width: 516px;
+	height: 232px;
+	background-color: #FFFFFF;
 }
 
 #container{
 	margin: 0 auto;
 	width: auto;
 	height: 960px;
-	background-color: #3B2C21;
+	background-color: #FFFFFF;
 }
 #button{
+	width: 516px;
+	height: 50px;
+	border: none;
+	background-color: rgb(147, 39, 143);
+	font-family: Verdana;
+	font-size: 25px;
+
 }
 
 #messagecontainer{
-	margin: 0 auto;
-	width: 750px;
+	margin: auto;
+	width: 516px;
 	height: auto;
-	background-color: #3B2C21;
+	background-color: #FFFFFF;
+	padding: 0;
 
+}
+#messagecontainer h5{
+	margin: auto;
 }
 
 textarea{
-	margin: 0 auto;
-	width: 750px;
-	height: 600px;
-	background-color: #847368;
+	margin: auto;
+	width: 514px;
+	height: 125px;
+	background-color: #FFFFFF;
 	font-size: 25px;
+	resize: none;
+	padding: 0;
+
 }
