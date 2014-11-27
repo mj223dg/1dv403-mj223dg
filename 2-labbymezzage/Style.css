@@ -1,9 +1,16 @@
-body{
-	margin: 0;
-	padding: 0;
+html, body {
+	height: 100%;
 }
 
-header{
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-moz-box-sizing:border-box;
+  	-webkit-box-sizing:border-box;
+}
+
+header {
 	margin: 0 auto;
 	padding: 0;
 	width: 516px;
@@ -11,23 +18,24 @@ header{
 	background-color: #FFFFFF;
 }
 
-#container{
+#container {
 	margin: 0 auto;
 	width: auto;
-	height: 960px;
+	height: auto;
 	background-color: #FFFFFF;
 }
-#button{
+#button {
 	width: 516px;
 	height: 50px;
 	border: none;
+	border-radius: 15px 15px;
 	background-color: rgb(147, 39, 143);
 	font-family: Verdana;
 	font-size: 25px;
 
 }
 
-#messagecontainer{
+#messagecontainer {
 	margin: auto;
 	width: 516px;
 	height: auto;
@@ -35,17 +43,36 @@ header{
 	padding: 0;
 
 }
-#messagecontainer h5{
+#messagecontainer h5 {
 	margin: auto;
 }
 
-textarea{
+textarea {
 	margin: auto;
-	width: 514px;
+	width: 510px;
+	border: 3px solid;
+	border-color: rgb(147, 39, 143);
+	border-radius: 15px 15px;
 	height: 125px;
 	background-color: #FFFFFF;
 	font-size: 25px;
 	resize: none;
 	padding: 0;
 
+}
+#chatLog {
+	margin-top: 5px;
+	border: 3px solid;
+	border-color: rgb(147, 39, 143);
+	border-radius: 15px 15px;
+	width: 510px;
+	height: 450px;
+	background-color: #FFFFFF;
+	word-wrap: break-word;
+	overflow: scroll;
+	overflow-x: hidden;
+
+}
+#chatLog img {
+	
 }
