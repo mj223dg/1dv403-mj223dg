@@ -1,21 +1,21 @@
 "Use strict";
-function Message(message, date){
+function Message(message, date) {
 
-	this.getText = function(){
+	this.getText = function() {
 		return message;
 	}
-	this.setText = function(_text){
+	this.setText = function(_text) {
 		message = text;
 	}
 	this.getDate = function(){
 		return date;
 	}
-	this.setDate = function(_date){
+	this.setDate = function(_date) {
 		date = _date;
 	}
 }
 
-Message.prototype.toString = function(){
+Message.prototype.toString = function() {
 
 	var date = this.getDate();
 	var month = ["Januari", "Februari", "Mars", "April", "Maj", "Juni", "Juli", "Augusti", "September", "Oktober", "November", "December"]
@@ -31,14 +31,14 @@ Message.prototype.toString = function(){
 	return "Inlägget skapades den: " + day + " " + months + " " + year + " " + "Klockan " + hour + ":" + minute + ":" + seconds;
 }
 
-Message.prototype.getHTMLText = function(){
+Message.prototype.getHTMLText = function() {
 
 	var htmlText = this.getText();
 
 	return htmlText.replace(/[\n\r]/g, "<br />");
 }
 
-Message.prototype.getDateText = function(){
+Message.prototype.getDateText = function() {
 	var date = this.getDate();
 	var hour = Message.zero(date.getHours());
 	var minute = Message.zero(date.getMinutes());
