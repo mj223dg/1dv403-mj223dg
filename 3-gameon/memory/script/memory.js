@@ -21,16 +21,15 @@ var memory = {
 			div.appendChild(p);
 			*/
 
-			var tablediv = document.getElementById("memoryContainer");
-			var li = document.createElement("li");
-			var a = document.createElement("a");
-			var text = document.createTextNode("123");
-			memoryContainer.appendChild(li);
-			li.appendChild(a);
-			a.appendChild(text);
-			a.setAttribute("pics/0.png")
-		for (var i = 0; i < random.length; i++){
 			
+
+		for (var i = 0; i < random.length; i++){
+			var tablediv = document.getElementById("memoryContainer");
+			var a = document.createElement("a");
+			var text = document.createTextNode("1");
+			memoryContainer.appendChild(a);
+			a.appendChild(text);
+
 			}
 		}
 	};
