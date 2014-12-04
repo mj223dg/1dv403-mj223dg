@@ -13,11 +13,18 @@ margin-left: 720px;
 
 #memoryContainer{
 	background-color: #999;
-	width: 800px;
-	height: 600px;
+	width: 96px;
+	height: 96px;
 	margin: auto;
 	margin-top: 50px;
 	border-radius: 15px 15px;
 
 }
+
+.divs {
+	float: left;
+	height: 24px;
+	width: 24px;
+}
+
 

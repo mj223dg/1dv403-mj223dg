@@ -12,25 +12,27 @@ var memory = {
 	},
 	imgArray: function (random){
 		console.log(random);
-		
-		/*var tablediv = document.getElementById("memoryContainer");
-			var div = document.createElement("div");
-			var p = document.createElement("p");
-			div.className = "storePics";
-			memoryContainer.appendChild(div);
-			div.appendChild(p);
-			*/
-
-			
 
 		for (var i = 0; i < random.length; i++){
 			var tablediv = document.getElementById("memoryContainer");
-			var a = document.createElement("a");
-			var text = document.createTextNode("1");
-			memoryContainer.appendChild(a);
-			a.appendChild(text);
 
+			var div = document.createElement("div");
+			var a = document.createElement("a");
+			var img = document.createElement("img");
+
+			div.setAttribute("class", "divs");
+			img.setAttribute("src", "pics/0.png");
+
+			memoryContainer.appendChild(div);
+			div.appendChild(a);
+			a.appendChild(img);
+			memory.click();
 			}
+		},
+
+		click: function(){
+		
+
 		}
 	};
 window.onload = memory.init;
