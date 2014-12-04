@@ -31,13 +31,13 @@ var memory = {
 			/**/
 			atag.addEventListener('click', memory.turnTile);
 
-			
+
 		}
 	},
 	turnTile : function(e){
 		console.log(this);
-		var atag = this;
-		
+	//	var atag = this;
+
 
 	}
 };
