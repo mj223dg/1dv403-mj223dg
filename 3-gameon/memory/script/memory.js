@@ -3,6 +3,7 @@
 var memory = {
 
 	random: [],
+	turnedTiles: [],
 
 	init:function() {
 
@@ -23,6 +24,7 @@ var memory = {
 
 			div.setAttribute("class", "divs");
 			img.setAttribute("src", "pics/0.png");
+			atag.setAttribute("href", "#");
 			atag.setAttribute("rel", memory.random[i]);
 			
 			atag.appendChild(img);
@@ -33,18 +35,43 @@ var memory = {
 		}
 	},
 	turnTile : function(e){
-
+		e.preventDefault();
 		//console.log(this.firstChild.setAttribute("src", "pics/1.png"));
-		var tag = this;
+		var tileValue = this;
+		var rel = tileValue.rel;
+		
 
-		var rel;
 
-		if(memory.random.length === 2) {
-
+		if(memory.turnedTiles.length < 2){
 			
+			if(!tileValue.hasAttribute("type")){
+				
+				tileValue.firstChild.setAttribute("src", "pics/"+rel+".png");
+				tileValue.setAttribute("type", "#");
+				memory.turnedTiles.push(tileValue);
+				console.log(memory.turnedTiles);
+			}
 		}
 
 
+		
+		if(memory.turnedTiles.length === 2) {
+
+			if(memory.turnedTiles[0].getAttribute("rel") === memory.turnedTiles[1].getAttribute("rel")){	
+				memory.turnedTiles.length = 0;
+			
+			} else {
+				setTimeout(function(){
+					for(var i = 0; i < memory.turnedTiles.length; i += 1){
+					
+						memory.turnedTiles[i].firstChild.setAttribute("src", "pics/0.png");
+						memory.turnedTiles[i].removeAttribute("type");
+
+					}
+					memory.turnedTiles.length = 0;
+				}, 1000);
+			}
+		}
 	} 
 };
 window.onload = memory.init;
