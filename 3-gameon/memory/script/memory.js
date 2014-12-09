@@ -23,22 +23,28 @@ var memory = {
 
 			div.setAttribute("class", "divs");
 			img.setAttribute("src", "pics/0.png");
-
+			atag.setAttribute("rel", memory.random[i]);
+			
 			atag.appendChild(img);
 			div.appendChild(atag);
 			memoryContainer.appendChild(div);
-
-			/**/
 			atag.addEventListener('click', memory.turnTile);
-
-
+			
 		}
 	},
 	turnTile : function(e){
-		console.log(this);
-	//	var atag = this;
+
+		//console.log(this.firstChild.setAttribute("src", "pics/1.png"));
+		var tag = this;
+
+		var rel;
+
+		if(memory.random.length === 2) {
+
+			
+		}
 
 
-	}
+	} 
 };
 window.onload = memory.init;
