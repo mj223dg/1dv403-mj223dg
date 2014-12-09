@@ -40,8 +40,6 @@ var memory = {
 		var tileValue = this;
 		var rel = tileValue.rel;
 		
-
-
 		if(memory.turnedTiles.length < 2){
 			
 			if(!tileValue.hasAttribute("type")){
@@ -53,9 +51,7 @@ var memory = {
 			}
 		}
 
-
-		
-		if(memory.turnedTiles.length === 2) {
+		if(memory.turnedTiles.length === 2){
 
 			if(memory.turnedTiles[0].getAttribute("rel") === memory.turnedTiles[1].getAttribute("rel")){	
 				memory.turnedTiles.length = 0;
