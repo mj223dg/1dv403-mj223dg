@@ -41,7 +41,7 @@ var memory = {
 		var tileValue = this;
 		var rel = tileValue.rel;	
 		if(memory.turnedTiles.length < 2){
-			
+			//set the tile attribute to type so you can't click it again when it's correct.
 			if(!tileValue.hasAttribute("type")){
 				
 				tileValue.firstChild.setAttribute("src", "pics/"+rel+".png");
@@ -52,13 +52,14 @@ var memory = {
 		}
 
 		if(memory.turnedTiles.length === 2){
-
+			//if correct flip the tile.
 			if(memory.turnedTiles[0].getAttribute("rel") === memory.turnedTiles[1].getAttribute("rel")){	
 				memory.turnedTiles.length = 0;
 				memory.counter++;
 				memory.correctCounter++;
 			} else {
 				setTimeout(function(){
+					//if not correct dont flip tile.
 					for(var i = 0; i < memory.turnedTiles.length; i += 1){
 					
 						memory.turnedTiles[i].firstChild.setAttribute("src", "pics/0.png");
@@ -71,6 +72,7 @@ var memory = {
 				}, 1000);
 			}
 		}
+		//if the the counter is equal to 8 you've won!.
 		if (memory.correctCounter === 8){
 			console.log("Du vann!")
 
