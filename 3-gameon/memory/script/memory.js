@@ -4,7 +4,8 @@ var memory = {
 
 	random: [],
 	turnedTiles: [],
-
+	counter : [],
+	correctCounter : [],
 	init:function() {
 
 		var cols = 4;
@@ -38,8 +39,7 @@ var memory = {
 		e.preventDefault();
 		//console.log(this.firstChild.setAttribute("src", "pics/1.png"));
 		var tileValue = this;
-		var rel = tileValue.rel;
-		
+		var rel = tileValue.rel;	
 		if(memory.turnedTiles.length < 2){
 			
 			if(!tileValue.hasAttribute("type")){
@@ -55,7 +55,8 @@ var memory = {
 
 			if(memory.turnedTiles[0].getAttribute("rel") === memory.turnedTiles[1].getAttribute("rel")){	
 				memory.turnedTiles.length = 0;
-			
+				memory.counter++;
+				memory.correctCounter++;
 			} else {
 				setTimeout(function(){
 					for(var i = 0; i < memory.turnedTiles.length; i += 1){
@@ -65,8 +66,18 @@ var memory = {
 
 					}
 					memory.turnedTiles.length = 0;
+					memory.counter++;
+					console.log(memory.counter);
 				}, 1000);
 			}
+		}
+		if (memory.correctCounter === 8){
+			console.log("Du vann!")
+
+			
+			var counter = document.getElementById("text");
+			counter.innerHTML = "Du vann på: " + memory.correctCounter + " klick!";
+
 		}
 	} 
 };

@@ -20,6 +20,13 @@ margin-left: 720px;
 	border-radius: 15px 15px;
 
 }
+#text{
+	height: 96px;
+	width: 96px;
+	background-color: #567;
+	margin: auto;
+	color: #000000;
+}
 
 .divs {
 	float: left;
