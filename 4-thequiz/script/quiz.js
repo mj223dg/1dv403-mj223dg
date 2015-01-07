@@ -14,7 +14,7 @@
 			quiz.sendit();
 		});
 	},
-
+	//Som enligt namnet antyder.
 	elementCreation : function(){
 		var question = document.getElementById("question");
 		var div = document.createElement("div");
@@ -26,6 +26,7 @@
 		
 	},
 
+	//Hämtar informationen från servern.
 	getRequest : function(){
 
 		var xhr = new XMLHttpRequest();
@@ -90,7 +91,7 @@
 
 		
 	},
-
+	//Visar frågan. "skriver ut response-texten"
 	viewQuestion : function(responseText){
 		var questionText = document.querySelector(".p")
 		if("question" in responseText){
@@ -100,7 +101,7 @@
 			questionText.innerHTML = responseText.message;
 		}
 	},
-
+	//När man svarar fel så skrivs ett felmeddelande ut som visas i 1 sekund.
 	wrong : function(){
 		var w = document.querySelector(".p");
 		w.innerHTML = "Wrong! Try again."
@@ -108,7 +109,7 @@
 			w.innerHTML = quiz.response.question;
 		},1000);
 	}, 
-
+	//Visar de olika försöken när alla frågor är svarade på.
 	enditall : function(){
 		var q = document.getElementById("question");
 		q.innerHTML = "";
