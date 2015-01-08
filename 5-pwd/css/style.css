@@ -32,8 +32,9 @@ header{
 }
 
 #window{
-	width: 150px;
-	height: 150px;
+	float: left;
+	width: 400px;
+	height: 500px;
 	background-color: white;
 	border-radius: 10px;
 	border: black 5px solid;

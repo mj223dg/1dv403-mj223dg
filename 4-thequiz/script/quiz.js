@@ -5,7 +5,7 @@
     neURL : "http://vhost3.lnu.se:20080/question/1",
     counter : 0,
     tries : [],
-    response: [],
+    response : [],
 
 	init : function(){
 		quiz.elementCreation();
