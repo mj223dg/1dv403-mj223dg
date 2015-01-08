@@ -5,14 +5,27 @@ define(function(){
 	var imageApp = {
 
 		init:function(){
+			document.getElementById("imageApp").onclick = function(){
 
+				imageApp.elementCreations();
+			}
 			console.log("hej");
 		},
 		//Skapar elementen för imgviewer.
 		elementCreations : function(){
-			var imageViewerApp = document.getElementById("imageApp");
-			var divImg = document.createElement("imgViewerDiv")
+
+			var divImg = document.createElement("div");
+			divImg.setAttribute("Id", "window");
+			document.body.appendChild(divImg);
+			
+			//document.body.style.backgroundImage="url('img_tree.png')";
 		},
+
+		/*
+		request : function(){
+
+		},
+		*/
 
 	}
 
