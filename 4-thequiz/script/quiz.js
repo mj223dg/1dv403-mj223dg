@@ -14,7 +14,7 @@
 			quiz.sendit();
 		});
 	},
-	//Som enligt namnet antyder.
+	//namnet antyder.
 	elementCreation : function(){
 		var question = document.getElementById("question");
 		var div = document.createElement("div");

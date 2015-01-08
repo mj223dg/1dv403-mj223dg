@@ -8,7 +8,11 @@ define(function(){
 
 			console.log("hej");
 		},
-
+		//Skapar elementen för imgviewer.
+		elementCreations : function(){
+			var imageViewerApp = document.getElementById("imageApp");
+			var divImg = document.createElement("imgViewerDiv")
+		},
 
 	}
 
