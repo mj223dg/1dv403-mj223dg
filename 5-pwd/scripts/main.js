@@ -1,5 +1,4 @@
-"use strict"
-console.log("maaa");
+"use strict";
 require.config({
 
 });
