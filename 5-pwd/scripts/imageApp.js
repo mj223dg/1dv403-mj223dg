@@ -5,31 +5,29 @@ define(function(){
 	var imageApp = {
 
 		URL : "http://homepage.lnu.se/staff/tstjo/labbyServer/imgviewer/",
-		divwindow: null,
 
 		init:function(){
 			document.getElementById("imageApp").onclick = function(){
 
-				imageApp.elementCreations();
-				imageApp.getRequest();
+				if(!document.getElementById("window")){
+					imageApp.elementCreations();
+					imageApp.getRequest();
+				}
 			}
 		},
 		//Skapar elementen för imgviewer.
 		elementCreations : function(){ 
 
 			// Skapar själva fönstret.
-			imageApp.divwindow = document.createElement("div");
-			imageApp.divwindow.setAttribute("Id", "window");
-			document.body.appendChild(imageApp.divwindow);
+			var divwindow = document.createElement("div");
+			divwindow.setAttribute("Id", "window");
+			document.body.appendChild(divwindow);
 
 			//Där bilderna skall visas.
 			var divImg = document.createElement("div");
 			divImg.setAttribute("Id", "img");
+			divwindow.appendChild(divImg);
 
-			//
-			imageApp.divwindow.appendChild(divImg);
-
-			//document.body.style.backgroundImage="url('img_tree.png')";
 		},
 
 		getRequest : function(){
@@ -50,13 +48,34 @@ define(function(){
 		},
 		
 		insertImages : function(response){
-			var bild = imageApp.divwindow.querySelector("#img");
+
+			var bild = document.querySelector("#img");
 
 			for(var i = 0; i < response.length; i +=1){
+			
+
 				var D = document.createElement("div");
-				bild.appendChild(D);
+				D.setAttribute("class", "pics");
+				
+
+				var atag = document.createElement("a");
+				atag.setAttribute("href", "#");
+
+
+				var picture = document.createElement("img");
+				picture.setAttribute("src", response[i].thumbURL);
 
 				
+				bild.appendChild(D);
+				D.appendChild(atag);
+				atag.appendChild(picture);
+
+				picture.onclick = function(){
+					var imgURL = this.src;
+					imgURL = imgURL.replace("/thumbs", "");
+					console.log(imgURL);
+					document.body.style.backgroundImage =  "url('"+imgURL+"')";
+				}
 			}
 		}
 
