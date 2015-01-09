@@ -50,6 +50,8 @@ define(function(){
 		insertImages : function(response){
 
 			var bild = document.querySelector("#img");
+			var thumbHeight = 0;
+			var thumbWidth = 0;
 
 			for(var i = 0; i < response.length; i +=1){
 			
@@ -69,6 +71,17 @@ define(function(){
 				bild.appendChild(D);
 				D.appendChild(atag);
 				atag.appendChild(picture);
+
+				if(thumbHeight < response[i].thumbHeight){
+					atag.thumbHeight = thumbHeight;
+				}
+
+				if (thumbWidth < response[i].thumbWidth){
+					atag.thumbWidth = thumbWidth
+				}
+
+				atag.style.height = thumbHeight+"px";
+				atag.style.width = thumbWidth+"px";
 
 				picture.onclick = function(){
 					var imgURL = this.src;
