@@ -22,10 +22,38 @@ define(function(){
 			divwindow.setAttribute("Id", "window");
 			document.body.appendChild(divwindow);
 
+			//Skapar imageviwer iconen i fönstret.
+			var windowIcon = document.createElement("div");
+			windowIcon.setAttribute("Id", "windowIcon");
+			divwindow.appendChild(windowIcon);
+
+			//skpar texten i window.
+			var windowText = document.createElement("span");
+			windowText.setAttribute("Id", "windowText");
+			divwindow.appendChild(windowText);
+			windowText.innerHTML="Imageviewer";
+
+
+			//Skapar stängningsfunktionen.
+			var closeWindow = document.createElement("img");
+			var closeWindowLink = document.createElement("a");
+
+			closeWindow.setAttribute("src", "pics/close.png");
+			closeWindow.setAttribute("Id", "closeWindow");
+			closeWindow.href="#";
+			closeWindowLink.appendChild(closeWindow);
+			divwindow.appendChild(closeWindowLink);
+
+			//stänger fönstret.
+			closeWindowLink.onclick = function(){
+				document.body.removeChild(divwindow);
+			}
+
 			//Där bilderna skall visas.
 			var divImg = document.createElement("div");
 			divImg.setAttribute("Id", "img");
 			divwindow.appendChild(divImg);
+
 
 			imageApp.getRequest(divImg);
 			
@@ -34,7 +62,6 @@ define(function(){
 
 		getRequest : function(divImg){
 
-			console.log("lzjsdjfgh")
 		var divLoading = document.createElement("div");
 		divLoading.setAttribute("class", "loadingDiv")
 		var loadingImg = document.createElement("img");
@@ -49,7 +76,6 @@ define(function(){
 		xhr.onreadystatechange = function(){
 			if (xhr.readyState === 4) {
 				if (xhr.status == 200){
-					console.log("aasdddff")
 					divImg.removeChild(divLoading);
 					imageApp.insertImages(JSON.parse(xhr.responseText));
 				}else{
