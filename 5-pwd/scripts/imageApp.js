@@ -11,7 +11,6 @@ define(function(){
 
 				if(!document.getElementById("window")){
 					imageApp.elementCreations();
-					imageApp.getRequest();
 				}
 			}
 		},
@@ -28,14 +27,30 @@ define(function(){
 			divImg.setAttribute("Id", "img");
 			divwindow.appendChild(divImg);
 
+			imageApp.getRequest(divImg);
+			
+
 		},
 
-		getRequest : function(){
+		getRequest : function(divImg){
+
+			console.log("lzjsdjfgh")
+		var divLoading = document.createElement("div");
+		divLoading.setAttribute("class", "loadingDiv")
+		var loadingImg = document.createElement("img");
+		loadingImg.setAttribute("src", "pics/loading.gif")
+
+		divImg.appendChild(divLoading);
+		divLoading.appendChild(loadingImg);
 
 		var xhr = new XMLHttpRequest();
+		
+
 		xhr.onreadystatechange = function(){
 			if (xhr.readyState === 4) {
 				if (xhr.status == 200){
+					console.log("aasdddff")
+					divImg.removeChild(divLoading);
 					imageApp.insertImages(JSON.parse(xhr.responseText));
 				}else{
 					console.log("Läsfel, status:"+xhr.status);
@@ -73,15 +88,15 @@ define(function(){
 				atag.appendChild(picture);
 
 				if(thumbHeight < response[i].thumbHeight){
-					atag.thumbHeight = thumbHeight;
+					thumbHeight = response[i].thumbHeight;
 				}
 
 				if (thumbWidth < response[i].thumbWidth){
-					atag.thumbWidth = thumbWidth
+					thumbWidth = response[i].thumbWidth
 				}
 
-				atag.style.height = thumbHeight+"px";
-				atag.style.width = thumbWidth+"px";
+				D.style.height = thumbHeight+"px";
+				D.style.width = thumbWidth+"px";
 
 				picture.onclick = function(){
 					var imgURL = this.src;
